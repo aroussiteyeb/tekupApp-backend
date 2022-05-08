@@ -30,6 +30,8 @@ const profilePicRoute = require('./routes/ProfilePic.route');
 const coverPicRoute = require('./routes/CoverPic.route');
 const eventRoute = require('./routes/event.route');
 const eventComment = require('./models/eventComment');
+const chatRoute = require('./routes/Chat.Route');
+
 
 
 
@@ -53,7 +55,8 @@ app.use('/api/comments', commentRoute);
 app.use('/api/eventComments', eventComment);
 app.use('/api/gallery', galleryRoute);
 app.use('/api/shares', shareRoute);
-app.use('/api/gallery', galleryRoute);
+app.use('/api/chats', chatRoute);
+
 
 // Create port
 const port = process.env.PORT || 4000;
