@@ -65,7 +65,7 @@ chatRoute.route('/').get((req, res, next) => {
 })
 // Get single Chat
 chatRoute.route('/read/:senderId/:reciverId').get((req, res, next) => {
-    Chat.find({ $or: [{ senderId: req.params.senderId, reciverId: req.params.reciverId }, { senderId: req.params.reciverId, reciverId: req.params.senderId }] }, (error, data) => {
+    Chat.find({ $or: [{ senderId: req.params.senderId, secondSenderId: req.params.reciverId }, { senderId: req.params.reciverId, secondSenderId: req.params.senderId }] }, (error, data) => {
         if (error) {
             return next(error)
         } else {
